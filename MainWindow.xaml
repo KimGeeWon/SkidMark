@@ -23,13 +23,13 @@
                            TextAlignment="Center" 
                            VerticalAlignment="Center"
                            Text="마찰 계수:"></TextBlock>
-                <TextBox Width="40" Height="30" x:Name="fric" FontSize="18" TextChanged="Fric_TextChanged"/>
+                <TextBox Width="40" Height="30" x:Name="fric" FontSize="18"/>
 
-                <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
+                <Button Width="80" Height="30" Grid.Row="0" Margin="20, 0" 
                         VerticalAlignment="Center" Content="계산하기" 
-                        FontSize="10" Click="Calculate"/>
+                        FontSize="18" Click="Calculate"/>
 
-                <TextBlock Width="40" Height="30" x:Name="result" FontSize="18" Text="0.00"></TextBlock>
+                <TextBlock Width="50" Height="30" x:Name="result" FontSize="18" Text="00.00"></TextBlock>
                 <TextBlock Width="60" Height="30" Margin="20, 0" FontSize="18" Text="km/h"></TextBlock>
             </WrapPanel>
 
@@ -41,7 +41,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding value}" FontSize="10"></TextBlock>
+                            <TextBlock Text="{Binding value}" FontSize="18"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
