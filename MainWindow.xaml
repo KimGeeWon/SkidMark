@@ -7,6 +7,45 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0">
+                <TextBlock Width="130" Height="30" Margin="20, 0" FontSize="18"
+                           TextAlignment="Center"
+                           Text="스키드 마크(m):"></TextBlock>
+                <TextBox Width="40" Height="30" x:Name="skid" FontSize="18"/>
+
+                <TextBlock Width="90" Height="30" Margin="20, 0" FontSize="18"
+                           TextAlignment="Center" 
+                           VerticalAlignment="Center"
+                           Text="마찰 계수:"></TextBlock>
+                <TextBox Width="40" Height="30" x:Name="fric" FontSize="18" TextChanged="Fric_TextChanged"/>
+
+                <Button Width="60" Height="30" Grid.Row="0" Margin="20, 0" 
+                        VerticalAlignment="Center" Content="계산하기" 
+                        FontSize="10" Click="Calculate"/>
+
+                <TextBlock Width="40" Height="30" x:Name="result" FontSize="18" Text="0.00"></TextBlock>
+                <TextBlock Width="60" Height="30" Margin="20, 0" FontSize="18" Text="km/h"></TextBlock>
+            </WrapPanel>
+
+            <TextBlock Grid.Row="1" FontWeight="Bold" FontSize="18">
+                * 맑은 날 건조한 아스팔트 도로에서 마찰계수는 승용차기준 0.8
+            </TextBlock>
+
+            <ListView x:Name="skidList" Grid.Row="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding value}" FontSize="10"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
